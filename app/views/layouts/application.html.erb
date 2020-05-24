@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Goodboy</title>
+    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+  
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <nav>
+    <div class="nav-wrapper">
+      <img src="/GoodBoy_logo.png" id="logo" class="brand-logo center">
+      
+    </div>
+  </nav>
+
+  <body>
+    <%= yield %>
+
+   
+  </body>
+</html>

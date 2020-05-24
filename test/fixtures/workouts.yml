@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type_of_exercise: MyString
+  minutes: 1
+  date: 2020-05-23
+
+two:
+  type_of_exercise: MyString
+  minutes: 1
+  date: 2020-05-23

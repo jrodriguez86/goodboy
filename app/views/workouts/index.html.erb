@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<h1>GoodBoy Workouts</h1>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Type of Exercise</th>
+      <th scope="col">Minutes</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @workouts.each do |workout| %>
+    <tr>
+    
+      <td><%= workout.type_of_exercise %></td>
+      <td><%= workout.minutes %></td>
+      <td><%= workout.date %></td>
+      <td><%= link_to 'See Workout', @workout, data: {toggle: "modal", target: "#modal1"} %></td>
+        <td><%= link_to 'Edit', edit_workout_path(workout) %></td>
+        <td><%= link_to 'Delete', workout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      
+    
+  </tbody>
+<% end %>
+</table>
+<!-- Modal Structure -->
+<% @workouts.each do |workout| %>
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4><%= workout.date %></h4>
+      <p><%= workout.type_of_exercise %></p>
+      <p><%= workout.minutes %></p>
+      
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+  </div>
+  <% end %>
+
+
+<br>
+
+<%= link_to '+', new_workout_path, class: "btn-floating btn-large waves-effect waves-light blue" %>
