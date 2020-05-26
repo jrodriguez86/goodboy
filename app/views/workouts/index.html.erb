@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>GoodBoy Workouts</h1>
+<h1>Workouts</h1>
 
+<canvas id="myChart"></canvas>
 
-<table class="table">
+<table class="highlight">
   <thead>
     <tr>
       <th scope="col">Type of Exercise</th>
@@ -46,3 +47,25 @@
 <br>
 
 <%= link_to '+', new_workout_path, class: "btn-floating btn-large waves-effect waves-light blue" %>
+
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+            label: 'Weekly Workout',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 15, 30, 45, 60, 90, 120]
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
