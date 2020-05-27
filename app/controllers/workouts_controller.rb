@@ -5,6 +5,7 @@ class WorkoutsController < ApplicationController
   # GET /workouts.json
   def index
     @workouts = Workout.all
+    @data = Workout.group(:type_of_exercise).count
   end
 
   # GET /workouts/1

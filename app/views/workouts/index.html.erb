@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Workouts</h1>
-
-<canvas id="myChart"></canvas>
+<h2> <%= Date.today.strftime("%B, %d, %Y") %> </h2>
+<%= pie_chart @data, donut: true, colors: ["#a3f7bf", "#fff591", "#05dfd7", "#f35588" ] %>
 
 <table class="highlight">
   <thead>
@@ -19,7 +19,7 @@
       <td><%= workout.type_of_exercise %></td>
       <td><%= workout.minutes %></td>
       <td><%= workout.date %></td>
-      <td><%= link_to 'See Workout', @workout, data: {toggle: "modal", target: "#modal1"} %></td>
+      <td><%= link_to 'See Workout', workout %></td>
         <td><%= link_to 'Edit', edit_workout_path(workout) %></td>
         <td><%= link_to 'Delete', workout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -49,19 +49,21 @@
 <%= link_to '+', new_workout_path, class: "btn-floating btn-large waves-effect waves-light blue" %>
 
 <script>
+
 var ctx = document.getElementById('myChart').getContext('2d');
+
 var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'line',
 
     // The data for our dataset
     data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: <%= @workouts.map(&:date) %>.to_json
         datasets: [{
             label: 'Weekly Workout',
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
-            data: [0, 15, 30, 45, 60, 90, 120]
+            data: <%= @workouts.map(&:minutes) %>.to_json
         }]
     },
 
