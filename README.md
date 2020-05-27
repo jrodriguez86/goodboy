@@ -1,24 +1,28 @@
-# README
+# GoodBoy
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## About
 
-Things you may want to cover:
+GoodBoy is an app that will help you keep track of your dogs exercise. Will provide a log of workouts as well as charts to make it easy to track. 
 
-* Ruby version
+## People that would use app
 
-* System dependencies
+Dog lovers who want to track their pups exercise.
 
-* Configuration
+## Technologies used
 
-* Database creation
+- HTML
+- CSS
+- JavaScript
+- Ruby on Rails
+- Materialize
+- Chart.js
 
-* Database initialization
+## Future updates
 
-* How to run the test suite
+- Create user authentication to log each of your dogs separtely or combine them into one profile
+- Add a chart that shows their workouts for the week/month
+- Create goals for exercise minutes per day with notifications 
 
-* Services (job queues, cache servers, search engines, etc.)
+## Wireframe
 
-* Deployment instructions
-
-* ...
+![Wireframe](Goodboy_wireframe.png)
