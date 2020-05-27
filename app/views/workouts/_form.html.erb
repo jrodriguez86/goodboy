@@ -1,3 +1,5 @@
+<div class="form">
+
 <%= form_with(model: workout, local: true) do |form| %>
   <% if workout.errors.any? %>
     <div id="error_explanation">
@@ -23,11 +25,21 @@
 
   <div>
   <%= form.label :date %>
-  <%= form.text_field :date, class: "datepicker" %>
+  <%= form.text_field :date %>
   </div>
 
-  <div class="actions">
+  <div id:"submit-button" class="actions">
     <%= form.submit class: "waves-effect waves-light btn-large" %>
   </div>
 <% end %>
+
+
+
+
+
+</div>
+
+
+
+
 
